@@ -18,5 +18,5 @@ app.use(require("./MuoFeed"))
 
 
 app.listen(3001, () => {
-    console.log('Server is Up.')
+    console.log('Server is Online.')
 })
