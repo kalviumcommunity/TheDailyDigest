@@ -28,7 +28,7 @@ const Android = () => {
 
       ) : (
       data.map((item, index) => {
-        return(
+        return(      
         <div className="news" key={index}>
           <img className="img" src={item.content[0].$.url} alt="hi"></img>
           <h2>{item.title[0]}</h2>

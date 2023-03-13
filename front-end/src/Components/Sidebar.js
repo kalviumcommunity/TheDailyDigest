@@ -1,8 +1,7 @@
-
-import './Navbar.css'
-import React from "react";
+import React from 'react'
 import logo1 from "../assets/logo1.png"
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import './Sidebar.css'
 import ars from "../assets/ars.png"
 import tnw from "../assets/tnw.png"
 import eng from "../assets/eng.png"
@@ -13,102 +12,119 @@ import digi from "../assets/digi.png"
 import verge from "../assets/verge.png"
 import police from "../assets/police.png"
 import andr from "../assets/andr.png"
+import { FaBars, FaTimes } from "react-icons/fa";
 
-
-
-
-
-
-const Navbar = ()=>{
-    return(
-        <div className="list">
+function Sidebar() {
+  return (
+    <div>
+        <input type="checkbox" id='check'/>
+        <label for="check">
+           <FaBars id='btn'/>
+            <FaTimes id='cancel'/>
+        </label>
+        <div className='sidebar'>
+            <header>
+              
+              <Link to={"/"}>      <img src={logo1}/>   
+      </Link>
             
-<div className="ding">
-      < a className="menu-item" href="">
-        <img src={logo1}/>   
-      </a>
-      
-      </div>
-      
      
-      <div className="sublist">
-
-
-      <Link to={"/androidauthority"}>
+  
+      
+      
+            </header>
+            <ul>
+                <li>
+                <Link to={"/androidauthority"}>
         <div className="outer-div">
         <img src={andr}/>
         </div>
-        </Link>
+        </Link></li>
+
+
            
+        <li>          
           <Link to={"/tnw"}>
           <div className="outer-div">
         <img src={tnw}/>
         </div>
-          </Link>
+          </Link></li>
 
-        <Link to={"/engadget"}>
+          <li>
+          <Link to={"/engadget"}>
         <div className="outer-div">
         <img src={eng}/>
         </div>
         </Link>
+        </li>
 
-
+        <li>
+            
         <Link to={"/androidpolice"}>
         <div className="outer-div">
         <img src={police}/>
         </div>
         </Link>
+        </li>
+
+        <li>
 
         <Link to={"/venture"}>
         <div className="outer-div">
         <img src={vent}/>
         </div>
         </Link>
+        </li>
+
+        <li>
         <Link to={"/gizmodo"}>
         <div className="outer-div">
         <img src={giz}/>
         </div>
         </Link>
+        </li>
+        <li>
+
         <Link to={"/arstechnica"}>
           <div className="outer-div">
               <img src={ars}/>
               </div>
           </Link>
+        </li>
 
-        <Link to={"/theverge"}>
+       <li>
+       <Link to={"/theverge"}>
         <div className="outer-div">
         <img src={verge}/>
         </div>
         </Link>
+        </li>
+
+        <li>
+
         <Link to={"/muo"}>
         <div className="outer-div">
         <img src={muo}/>
         </div>
         </Link>
+        </li>
 
 
-      <Link to={"/digitaltrends"}>
+<li>
+
+
+
+<Link to={"/digitaltrends"}>
         <div className="outer-div">
         <img src={digi}/>
         </div>
         </Link>
 
-
-      </div>
-      
-      <div>
-
-      <p>© All Rights Reserved</p>
-      </div>
-
+</li>
+            </ul>
         </div>
-
-    )
-
+    </div>
+  )
 }
 
-
-
-
-
-export default Navbar;
+export default Sidebar

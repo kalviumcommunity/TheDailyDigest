@@ -10,12 +10,17 @@ const Verge = () => {
   const [loading, setLoading] = useState(true);
 
 
+  // console.log(data)
+
+
   useEffect(() => {
 
     const preLoader =async()=>{
       const response = await axios.get("http://localhost:3001/theverge")
-      setData(response.data.rss.channel[0].item);
+      setData(response.data.feed.entry);
       setLoading(false);
+
+      
     };
     preLoader();
   }, []);
@@ -31,8 +36,10 @@ const Verge = () => {
       data.map((item, index) => {
        const regex = /src="([^"]+)"/;
        const imageLink = item.content[0]._;
+    
        const matches = imageLink.match(regex);
-       let src =matches[1];
+       let src =matches;
+       console.log(src)
 
        return( <div className="news" key={index}>
 
@@ -46,7 +53,8 @@ const Verge = () => {
       })
       )}
     </div>
-  );
-};
+  )}
+
+
 
 export default Verge;

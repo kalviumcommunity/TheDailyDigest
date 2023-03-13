@@ -1,4 +1,4 @@
-import Navbar from './Components/Navbar';
+// import Navbar from './Components/Navbar';
 import { Route, Routes } from "react-router-dom"
 import Ars from './Components/ArsTechnica';
 import "./App.css"
@@ -11,12 +11,15 @@ import Android from './Components/AndroidAuthority';
 import Verge from './Components/TheVerge';
 import Police from './Components/AndroidPolice';
 import Muo from './Components/Muo';
+import Sidebar from './Components/Sidebar';
 
 function App() {
   return (
       <div className="container">
-        <Navbar/>
+ 
+        <Sidebar/>
         <Routes>
+        {/* <Route path={"/"} element={<Navbar />} /> */}
           <Route path={"/arstechnica"} element={<Ars />} />
           <Route path={"/tnw"} element={<Tnw />} />
           <Route path={"/engadget"} element={<Eng/>}/>
