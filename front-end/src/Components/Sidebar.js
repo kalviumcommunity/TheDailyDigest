@@ -25,7 +25,8 @@ function Sidebar() {
         <div className='sidebar'>
             <header>
               
-              <Link to={"/"}>      <img src={logo1}/>   
+              <Link to={"/"}>      
+              <img src={logo1}/>   
       </Link>
             
      

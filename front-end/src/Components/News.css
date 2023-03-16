@@ -1,14 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
-h2{
+.anchor-tag{
     color: black;
-    /* text-align: left; */
-    /* padding-left: 10rem; */
+    font-size: x-large;
     font-family: 'Italiana', serif;
     font-weight: bolder;
-    /* height: 19vh; */
     width: 36%;
-    /* margin-top: -100px;*/
 
 }
 
@@ -17,12 +14,14 @@ h2{
     display: flex;
     width: 84vw;
     border-bottom: rgba(0,0,0,0.2) solid 1px;
-    margin-left: 17%;
+    margin-left: 15%;
     justify-content: space-between;
     align-items: center;
     /* padding: 1rem; */
     padding-top: 2rem;
     padding-bottom: 2rem;
+    
+
 
 }
 
@@ -44,9 +43,7 @@ h2{
     box-shadow: 0 18px 36px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     margin-left: 10%;
     align-items: center;
-    /* margin-top: 3%; */
     width: 246px;
-    /* MARGIN-BOTTOM: 3%;*/
 }
 
 
@@ -73,7 +70,7 @@ iframe{
     .news{
         margin-left: 19%;
     }
-    h2{
+    .anchor-tag{
         margin-left: 2rem;
     }
 }
@@ -106,7 +103,7 @@ iframe{
         height: auto;
     }
 
-    h2{
+    .anchor-tag{
         width: 90%;
         margin-left: 0rem;
         margin-top: 1.2rem;

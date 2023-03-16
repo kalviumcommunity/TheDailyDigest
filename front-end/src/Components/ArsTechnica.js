@@ -13,7 +13,7 @@ const Ars = () => {
   useEffect(() => {
 
     const preLoader =async()=>{
-      const response = await axios.get("http://localhost:3001/arstechnica")
+      const response = await axios.get(`${process.env.REACT_APP_RSSFEED}/arstechnica`)
       setData(response.data.rss.channel[0].item);
       setLoading(false);
     };
@@ -39,7 +39,7 @@ const Ars = () => {
         console.log(src)
         return (<div className="news" key={index}>
           <img className="img" src={src} alt="hi"></img>
-          <h2>{item.title[0]}</h2>
+          <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
           <p className="para">Uploaded on {item.pubDate}</p>
           {/* <hr></hr> */}
         </div>

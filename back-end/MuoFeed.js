@@ -1,6 +1,7 @@
 const app = require('express').Router()
 const axios = require('axios');
 const xml2js = require('xml2js')
+require('dotenv').config();
 const parseString = xml2js.Parser({
   tagNameProcessors: [xml2js.processors.stripPrefix]
 }).parseString;
