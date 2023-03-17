@@ -1,0 +1,138 @@
+ .nav-align{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    width: 84.2vw;
+    height: 9vh;
+    margin-left: 15%;
+    background-color: white;
+    z-index: 100;
+    
+}
+
+
+.nav-align input{
+    position: sticky;
+    top: 2vh;
+    width: 450px;
+    right: 29vw;
+    height: 34px;
+    border-radius: 12px;
+    border: rgba(0,0,0,0.2) solid 1px;
+    padding: 0 1rem;
+    
+}
+
+.nav-align input:focus {
+    outline: none;
+  }
+  
+
+
+.user-icon{
+    height: 34px;
+    position: fixed;
+    
+    top: 2vh;
+    right: 2rem;
+}
+
+
+
+@media (max-width: 1000px){
+    .nav-align input{
+        width: 380px;
+
+    }
+    
+    .nav-align{
+        width: 100%;
+        margin: 0;
+    }
+
+    .user-icon{
+        position: fixed;
+        margin-right: 1%;
+    }
+}
+
+
+@media (max-width: 700px){
+    .nav-align input{
+        width: 300px;
+
+
+    }
+}
+
+@media (max-width: 700px){
+    .nav-align{
+       /* width: 88%; */
+       width: 100%;
+
+
+    }
+    /* .user-icon{
+        display: inline;
+    } */
+
+   
+}
+
+@media(max-width:450px){
+    .user-icon{
+        right: 1rem;
+    }
+}
+
+@media(max-width:370px){
+    .user-icon{
+        right: 0rem;
+    }
+    .abc{
+
+
+        
+        /* width: 200px; */
+        left: 13vw;
+    }
+}
+
+
+@media (max-width: 600px){
+    .nav-align input{
+        width: 250px;
+
+    }
+}
+
+
+@media (max-width: 511px){
+    .nav-align input{
+        width: 200px;
+        left: 18vw;
+
+
+    }
+}
+
+/* @media (min-width:300px){
+    .nav-align{
+        position: sticky;
+        width: 100%;
+        margin: 0;
+    }
+    
+
+    } */
+
+
+ 
+
+
+
+
+
+

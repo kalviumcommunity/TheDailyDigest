@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap');
+
+
+h1{
+    text-align: left;
+    position: absolute;
+    top: 30%;
+    left:24%;
+    font-size: 40px;
+    font-family: 'Italiana', serif;
+    font-weight: bold;
+    color:rgb(3, 21, 49);
+}
+
+.home-para{
+    font-family: 'Karla', sans-serif;
+    position: absolute;
+    top: 47%;
+    left:24%;
+    color:rgb(3, 21, 49);
+    font-size: 20px;
+}
+
+.home-bg{
+    position: fixed;
+    top: 38%;
+    left:66%;
+    height: 225px;
+
+}
+
+
+@media (max-width: 1450px){
+
+    .home-bg{
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 1000px){
+
+    .home-para{
+        
+    position: absolute;
+    top: 44%;
+    left:4%;
+
+    }
+
+    h1{
+        
+        position: absolute;
+        top: 30%;
+        left:4%;
+    
+        }
+
+}
+
+
+@media (max-width: 650px){
+
+    .home-para{
+        font-size: 13px;
+    }
+
+
+}
+
+
+@media (max-width: 430px){
+
+    .home-para{
+        font-size: 11px;
+    }
+
+
+}
