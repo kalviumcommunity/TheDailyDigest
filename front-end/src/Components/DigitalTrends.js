@@ -13,7 +13,7 @@ const Digi = () => {
   useEffect(() => {
 
     const preLoader =async()=>{
-      const response = await axios.get("http://localhost:3001/digitaltrends")
+      const response = await axios.get(`${process.env.REACT_APP_RSSFEED}/digitaltrends`)
       setData(response.data.rss.channel[0].item);
       setLoading(false);
     };
@@ -32,7 +32,7 @@ const Digi = () => {
         return (<div className="news" key={index}>
           <img className="img" src={item.enclosure[0].$.url} alt="hi"></img>
 
-          <h2>{item.title[0]}</h2>
+          <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
           <p className="para">Uploaded on {item.pubDate}</p>
           {/* <hr></hr> */}
         </div>

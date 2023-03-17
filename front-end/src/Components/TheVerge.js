@@ -10,13 +10,13 @@ const Verge = () => {
   const [loading, setLoading] = useState(true);
 
 
-  // console.log(data)
+  console.log(data)
 
 
   useEffect(() => {
 
     const preLoader =async()=>{
-      const response = await axios.get("http://localhost:3001/theverge")
+      const response = await axios.get(`${process.env.REACT_APP_RSSFEED}/theverge`)
       setData(response.data.feed.entry);
       setLoading(false);
 
@@ -24,6 +24,8 @@ const Verge = () => {
     };
     preLoader();
   }, []);
+
+
 
   return (  
     <div>
@@ -38,14 +40,12 @@ const Verge = () => {
        const imageLink = item.content[0]._;
     
        const matches = imageLink.match(regex);
-       let src =matches;
-       console.log(src)
-
+       let src =matches[1];
        return( <div className="news" key={index}>
 
           <img className="img" src={src} alt="hi"></img>
 
-          <h2>{item.title}</h2>
+          <a className="anchor-tag" href={item.link[0].$.href} target="_blank" rel="noreferrer">{item.title[0]}</a>
           <p className="para">Uploaded on {item.published}</p>
 
         </div>
