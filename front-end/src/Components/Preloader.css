@@ -14,11 +14,11 @@
     height: 220px;
 }
 
-.grid{
+.grid-none{
     display: flex;
     position: absolute;
     top: 46.8vh;
-    margin-left: -2.5rem;
+    margin-left: 24.5rem;
 }
 
 
@@ -27,6 +27,7 @@
 
     .preloader img{
         height: 200px;
+        
     }
 
 
@@ -37,13 +38,12 @@
 @media (max-width: 420px){
 
     .preloader img{
-        height: 170px;
-    }
+        height: 200px;
 
-    .grid{
-        display: flex;
-        position: absolute;
-        top: 47vh;
+        }
+
+    .grid-none{
+        display: none;
     }
 
 
