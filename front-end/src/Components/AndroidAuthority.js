@@ -81,7 +81,7 @@ const Android = () => {
   return (  
     <div>
       {loading ? (
-        <Backdrop open={loading}>
+          <Backdrop  className="back-drop-visibility" open={loading}>
           <CircularProgress color="inherit" />
         </Backdrop>
 

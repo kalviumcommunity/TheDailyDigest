@@ -9,10 +9,6 @@ const Verge = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
-  console.log(data)
-
-
   useEffect(() => {
 
     const preLoader =async()=>{
@@ -30,17 +26,32 @@ const Verge = () => {
   return (  
     <div>
               {loading ? (
-        <Backdrop open={loading}>
+          <Backdrop  className="back-drop-visibility" open={loading}>
+
+
+
+
+
+
           <CircularProgress color="inherit" />
         </Backdrop>
 
       ) : (
       data.map((item, index) => {
+       const images = 'https://res.cloudinary.com/diuq0mz3b/image/upload/v1678421711/istockphoto-1335050734-612x612_x3mdtm.jpg'
        const regex = /src="([^"]+)"/;
        const imageLink = item.content[0]._;
     
        const matches = imageLink.match(regex);
-       let src =matches[1];
+       let src;
+       if (matches==null){
+        src =images;
+       }
+       else{
+        src=matches[1]
+       }
+
+       console.log(src)
        return( <div className="news" key={index}>
 
           <img className="img" src={src} alt="hi"></img>

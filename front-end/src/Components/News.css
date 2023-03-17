@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
+
+
+.back-drop-visibility{
+    z-index: 9999;
+}
+
+
 .anchor-tag{
     color: black;
     font-size: x-large;
     font-family: 'Italiana', serif;
     font-weight: bolder;
     width: 36%;
+    z-index: 99;
 
 }
 
