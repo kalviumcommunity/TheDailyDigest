@@ -38,11 +38,8 @@ const Verge = () => {
 
       ) : (
       data.map((item, index) => {
-<<<<<<< HEAD
       const date=item.published[0].slice(0,10)
       console.log(date)
-=======
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
        const images = 'https://res.cloudinary.com/diuq0mz3b/image/upload/v1678421711/istockphoto-1335050734-612x612_x3mdtm.jpg'
        const regex = /src="([^"]+)"/;
        const imageLink = item.content[0]._;
@@ -62,11 +59,7 @@ const Verge = () => {
           <img className="img" src={src} alt="hi"></img>
 
           <a className="anchor-tag" href={item.link[0].$.href} target="_blank" rel="noreferrer">{item.title[0]}</a>
-<<<<<<< HEAD
           <p className="para">Uploaded on {date}</p>
-=======
-          <p className="para">Uploaded on {item.published}</p>
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
 
         </div>
 );

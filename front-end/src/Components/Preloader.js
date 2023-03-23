@@ -22,8 +22,4 @@ function Preloader() {
   )
 }
 
-<<<<<<< HEAD
 export default Preloader
-=======
-export default Preloader
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d

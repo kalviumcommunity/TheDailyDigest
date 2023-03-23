@@ -23,11 +23,7 @@ const Digi = () => {
   return (  
     <div>
             {loading ? (
-<<<<<<< HEAD
         <Backdrop  className="back-drop-visibility" open={loading}>
-=======
-          <Backdrop  className="back-drop-visibility" open={loading}>
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
           <CircularProgress color="inherit" />
         </Backdrop>
 
@@ -38,12 +34,7 @@ const Digi = () => {
           <img className="img" src={item.enclosure[0].$.url} alt="hi"></img>
 
           <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
-<<<<<<< HEAD
           <p className="para">Uploaded on {date}</p>          {/* <hr></hr> */}
-=======
-          <p className="para">Uploaded on {item.pubDate}</p>
-          {/* <hr></hr> */}
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
         </div>
         );
       })

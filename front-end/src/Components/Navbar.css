@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap');
  
-=======
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
  .nav-align{
     display: flex;
     flex-direction: row;
@@ -19,11 +16,7 @@
 
 
 .nav-align input{
-<<<<<<< HEAD
     position: fixed;
-=======
-    position: sticky;
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
     top: 2vh;
     width: 450px;
     right: 29vw;
@@ -48,7 +41,6 @@
     right: 2rem;
 }
 
-<<<<<<< HEAD
 .user-logout{
     height: 34px;
     position: fixed;
@@ -72,8 +64,6 @@
 }
 
 
-=======
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
 
 
 @media (max-width: 1000px){
@@ -91,7 +81,6 @@
         position: fixed;
         margin-right: 1%;
     }
-<<<<<<< HEAD
 
     .user-logout{
         position: fixed;
@@ -110,10 +99,6 @@
 
 
 
-=======
-}
-
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
 
 @media (max-width: 700px){
     .nav-align input{
@@ -141,26 +126,20 @@
     .user-icon{
         right: 1rem;
     }
-<<<<<<< HEAD
 
     .user-logout{
         right: 1rem;
     }
-=======
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
 }
 
 @media(max-width:370px){
     .user-icon{
         right: 0rem;
     }
-<<<<<<< HEAD
 
     .user-logout{
         right: 0rem;
     }
-=======
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
     .abc{
 
 

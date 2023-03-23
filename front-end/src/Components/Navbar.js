@@ -1,6 +1,5 @@
 import React from 'react'
 import "./Navbar.css"
-<<<<<<< HEAD
 import{FaUserAlt} from 'react-icons/fa'
 import { FaArrowLeft } from 'react-icons/fa';
 import { useAuth0 } from "@auth0/auth0-react";
@@ -36,21 +35,6 @@ function Navbar() {
 
 
 </div>
-=======
-// import {Button} from '@mui/material';
-import{FaUserAlt} from 'react-icons/fa'
-// import { TextField } from '@mui/material';
-function Navbar() {
-  return (
-    // <div className='hello'>
-    <div className='nav-align'>
-        <input type="text" className='abc' placeholder='Search...'></input>
-        <FaUserAlt className='user-icon'/>
-
-    </div>
-
-    // {/* </div> */}
->>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
   )
 }
 
