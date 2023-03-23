@@ -7,7 +7,7 @@ function Preloader() {
   return (
     <div className='preloader'>
         <div><img alt="hi" src={pre}></img></div>
-        <div>
+        <div className='grid-none'>
         <Bars
   height="30"
   width="30"
