@@ -17,6 +17,10 @@ app.use(require("./TheVergeFeed"))
 app.use(require("./MuoFeed"))
 
 
+<<<<<<< HEAD
 app.listen(3001, () => {
+=======
+app.listen(3002, () => {
+>>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
     console.log('Server is Online.')
 })

@@ -24,7 +24,11 @@ const Police = () => {
   return (
     <div>
       {loading ? (
+<<<<<<< HEAD
         <Backdrop  className="back-drop-visibility" open={loading}>
+=======
+          <Backdrop  className="back-drop-visibility" open={loading}>
+>>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
           <CircularProgress color="inherit" />
         </Backdrop>
 
@@ -39,8 +43,13 @@ const Police = () => {
                 alt="hi"
               ></img>
               <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
+<<<<<<< HEAD
               <p className="para">Uploaded on {date}</p>
                           </div>
+=======
+              <p className="para">Uploaded on {item.pubDate}</p>
+            </div>
+>>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
           );
         })
       )}

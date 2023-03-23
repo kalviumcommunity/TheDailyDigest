@@ -81,20 +81,31 @@ const Android = () => {
   return (  
     <div>
       {loading ? (
+<<<<<<< HEAD
         <Backdrop  className="back-drop-visibility" open={loading}>
+=======
+          <Backdrop  className="back-drop-visibility" open={loading}>
+>>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
           <CircularProgress color="inherit" />
         </Backdrop>
 
       ) : (
         data.map((item, index) => {
+<<<<<<< HEAD
           const date=item.pubDate[0].slice(0,22)
+=======
+>>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
           return(      
             <div className="news" key={index}>
               <img className="img" src={item.content[0].$.url} alt="hi"></img>
               <h2 className="anchor-tag" onClick={() => handleOnClick(item.link[0])}>
                 {item.title[0]}
               </h2>
+<<<<<<< HEAD
               <p className="para">Uploaded on {date}</p>
+=======
+              <p className="para">Uploaded on {item.pubDate}</p>
+>>>>>>> 8b033441aab83fc22bc0345696c95e46fa0f863d
               {/* <hr></hr> */}
             </div>
           );
