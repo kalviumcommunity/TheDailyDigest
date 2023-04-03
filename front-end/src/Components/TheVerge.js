@@ -9,6 +9,7 @@ const Verge = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
 
     const preLoader =async()=>{
@@ -43,6 +44,7 @@ const Verge = () => {
        const imageLink = item.content[0]._;
     
        const matches = imageLink.match(regex);
+
        let src;
        if (matches==null){
         src =images;
@@ -52,6 +54,7 @@ const Verge = () => {
        }
 
        console.log(src)
+
        return( <div className="news" key={index}>
 
           <img className="img" src={src} alt="hi"></img>

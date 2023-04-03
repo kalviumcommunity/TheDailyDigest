@@ -17,6 +17,8 @@ app.use(require("./TheVergeFeed"))
 app.use(require("./MuoFeed"))
 
 
-app.listen(3002, () => {
+
+app.listen(3001, () => {
+
     console.log('Server is Online.')
 })
