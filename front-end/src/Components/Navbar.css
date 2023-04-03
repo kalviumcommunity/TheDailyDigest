@@ -8,12 +8,14 @@
     height: 9vh;
     margin-left: 15%;
     background-color: white;
-    
+    z-index: 100;
 }
+
 
 
 .nav-align input{
     position: fixed;
+
     top: 2vh;
     width: 450px;
     right: 29vw;
