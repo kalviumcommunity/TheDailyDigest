@@ -20,14 +20,12 @@ function LoginMenu() {
         display: 'none'
       };
 
-
-
   return (
     <div className='action' id='display-menu' style={myStyle}>
         <div className='menu'>
             <div className='avatar-div'>
                 {isAuthenticated&&
-            <img className='avatar' src={user.picture} alt="img" />}
+            <img className='avatar' src={user.picture}  />}
             </div>
             {isAuthenticated&&
             <h3>{user.name}</h3>}

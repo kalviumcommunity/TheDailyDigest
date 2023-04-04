@@ -39,15 +39,11 @@
     
     top: 2vh;
     right: 2rem;
+    cursor: pointer;
+    color: black;
 }
 
-.user-logout{
-    height: 34px;
-    position: fixed;
-    
-    top: 2vh;
-    right: 2rem;
-}
+
 
 
 .user-name{
@@ -82,10 +78,6 @@
         margin-right: 1%;
     }
 
-    .user-logout{
-        position: fixed;
-        margin-right: 1%;
-    }
     .user-name{
         right: 7vw;
     }
@@ -127,9 +119,6 @@
         right: 1rem;
     }
 
-    .user-logout{
-        right: 1rem;
-    }
 }
 
 @media(max-width:370px){
@@ -137,9 +126,7 @@
         right: 0rem;
     }
 
-    .user-logout{
-        right: 0rem;
-    }
+
     .abc{
 
 

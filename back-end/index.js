@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors')
-
+require('dotenv').config();
 const app = express();
 app.use(express.json())
 app.use(cors())
@@ -17,6 +17,11 @@ app.use(require("./TheVergeFeed"))
 app.use(require("./MuoFeed"))
 
 
-app.listen(3001, () => {
-    console.log('Server is Online.')
-})
+
+    app.listen(3001, () => {
+        console.log('Server is up.')
+    })
+
+
+
+
