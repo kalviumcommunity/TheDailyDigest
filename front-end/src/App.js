@@ -47,20 +47,16 @@ function App() {
         <Routes>
           <Route path="*" element={<Home/>} />
           <Route path={"/"} element={<Home />} />
-          <Route path={"/arstechnica"} element={<Ars />} />
-          <Route path={"/tnw"} element={<Tnw />} />
-          <Route path={"/engadget"} element={<Eng/>}/>
-          <Route path={"/androidpolice"} element={<Police/>}></Route>
-          <Route path={"/venture"} element={<Venture/>}></Route>
-          <Route path={"/gizmodo"} element={<Giz/>}></Route>
-          <Route path={"/digitaltrends"} element={<Digi/>}></Route>
-
-
+          <Route path={"/arstechnica"} element={<Ars searchbar={searchbar} />} />
+          <Route path={"/tnw"} element={<Tnw searchbar={searchbar}/>} />
+          <Route path={"/engadget"} element={<Eng searchbar={searchbar}/>}/>
+          <Route path={"/androidpolice"} element={<Police searchbar={searchbar}/>}></Route>
+          <Route path={"/venture"} element={<Venture searchbar={searchbar}/>}></Route>
+          <Route path={"/gizmodo"} element={<Giz searchbar={searchbar}/>}></Route>
+          <Route path={"/digitaltrends"} element={<Digi searchbar={searchbar}/>}></Route>
           <Route path={"/androidauthority"} element={<Android searchbar={searchbar}/>}></Route>
-
-
-          <Route path={"/theverge"} element={<Verge/>}></Route>
-          <Route path={"/muo"} element={<Muo/>}></Route>
+          <Route path={"/theverge"} element={<Verge searchbar={searchbar}/>}></Route>
+          <Route path={"/muo"} element={<Muo searchbar={searchbar}/>}></Route>
         </Routes>
       </div>
     </>
