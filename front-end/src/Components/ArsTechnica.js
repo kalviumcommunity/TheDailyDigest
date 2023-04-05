@@ -25,12 +25,13 @@ const Ars = () => {
     <div>
 
             {loading ? (
-          <Backdrop  className="back-drop-visibility" open={loading}>
+        <Backdrop  className="back-drop-visibility" open={loading}>
           <CircularProgress color="inherit" />
         </Backdrop>
 
       ) : (
       data.map((item, index) => {
+        const date=item.pubDate[0].slice(0,22)
       
         const regex = /<img\s+src="([^"]+)"/;
         const imageLink = item.encoded[0];
@@ -40,8 +41,7 @@ const Ars = () => {
         return (<div className="news" key={index}>
           <img className="img" src={src} alt="hi"></img>
           <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
-          <p className="para">Uploaded on {item.pubDate}</p>
-          {/* <hr></hr> */}
+          <p className="para">Uploaded on {date}</p>          {/* <hr></hr> */}
         </div>
         );
       })
