@@ -18,8 +18,13 @@ import './App.css'
 import Home from "./Components/Home";
 
 
+
 function App() {
+
+  
   const [loading, setLoading] = useState(true);
+
+  const [searchbar, setSearchbar] = useState("");
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -29,15 +34,18 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
 
+
+
   return (
     <>
-      <div className={`loader-container ${loading ? 'show' : 'hide'}`}>
+      <div className={`${loading ? 'show' : 'hide'}`}>
         <Preloader />
       </div>
-      <div className={`container ${loading ? 'hide' : 'show'}`}>
+      <div className={`${loading ? 'hide' : 'show'}`}>
         <Sidebar />
-        <Navbar />
+        <Navbar setSearchbar={setSearchbar} />
         <Routes>
+          <Route path="*" element={<Home/>} />
           <Route path={"/"} element={<Home />} />
           <Route path={"/arstechnica"} element={<Ars />} />
           <Route path={"/tnw"} element={<Tnw />} />
@@ -46,7 +54,11 @@ function App() {
           <Route path={"/venture"} element={<Venture/>}></Route>
           <Route path={"/gizmodo"} element={<Giz/>}></Route>
           <Route path={"/digitaltrends"} element={<Digi/>}></Route>
-          <Route path={"/androidauthority"} element={<Android/>}></Route>
+
+
+          <Route path={"/androidauthority"} element={<Android searchbar={searchbar}/>}></Route>
+
+
           <Route path={"/theverge"} element={<Verge/>}></Route>
           <Route path={"/muo"} element={<Muo/>}></Route>
         </Routes>
@@ -56,3 +68,4 @@ function App() {
 }
 
 export default App;
+
