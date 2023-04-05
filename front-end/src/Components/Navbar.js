@@ -1,19 +1,42 @@
-import React from 'react'
-import "./Navbar.css"
-// import {Button} from '@mui/material';
-import{FaUserAlt} from 'react-icons/fa'
-// import { TextField } from '@mui/material';
-function Navbar() {
-  return (
-    // <div className='hello'>
-    <div className='nav-align'>
-        <input type="text" className='abc' placeholder='Search...'></input>
-        <FaUserAlt className='user-icon'/>
+import React from "react";
+import "./Navbar.css";
+import { FaUserAlt } from "react-icons/fa";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginMenu from "./LoginMenu";
 
-    </div>
-
-    // {/* </div> */}
-  )
+function showElement() {
+  var element = document.getElementById("display-menu");
+  if (element.style.display === "none") {
+    element.style.display = "inline";
+  } else {
+    element.style.display = "none";
+  }
 }
 
-export default Navbar
+function Navbar(props) {
+
+  const handleSearch = (event) => {
+    props.setSearchbar(event.target.value);
+  };
+
+  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
+  return (
+    <div className="nav-align">
+      <input className="abc" type="text" placeholder="Search news" onChange={handleSearch} />
+      {isAuthenticated && <p className="user-name">{user.name}</p>}
+
+      {isAuthenticated ? (
+        <FaUserAlt onClick={showElement} className="user-icon" />
+      ) : (
+        <FaUserAlt onClick={() => loginWithRedirect()} className="user-icon" />
+      )}
+
+      <LoginMenu />
+    </div>
+  );
+}
+
+export default Navbar;
+
+
+

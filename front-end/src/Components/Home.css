@@ -11,6 +11,7 @@ h1{
     font-family: 'Italiana', serif;
     font-weight: bold;
     color:rgb(3, 21, 49);
+    z-index: 1;
 }
 
 .home-para{
@@ -20,6 +21,7 @@ h1{
     left:24%;
     color:rgb(3, 21, 49);
     font-size: 20px;
+    z-index: 9;
 }
 
 .home-bg{

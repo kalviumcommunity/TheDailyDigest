@@ -1,5 +1,4 @@
 
-
 .preloader{
     display: flex;
     background-color: black;
@@ -13,7 +12,6 @@
 .preloader img{
     height: 220px;
 }
-
 
 .grid-none{
     display: flex;
@@ -43,7 +41,6 @@
 
     .grid-none{
         display: none;
-
     }
 
 

@@ -24,19 +24,19 @@ const Eng = () => {
   return (  
     <div>
             {loading ? (
-          <Backdrop  className="back-drop-visibility" open={loading}>
+        <Backdrop  className="back-drop-visibility" open={loading}>
           <CircularProgress color="inherit" />
         </Backdrop>
 
       ) : (
         
       data.map((item, index) => {
+        const date=item.pubDate[0].slice(0,22)
 return( <div className="news" key={index}>
         <img className="img" src={item.content[0].$.url} alt="hi"></img>
 
         <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
-        <p className="para">Uploaded on {item.pubDate}</p>
-        </div>
+        <p className="para">Uploaded on {date}</p>        </div>
       );
 })
 )};

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap');
+ 
  .nav-align{
     display: flex;
     flex-direction: row;
@@ -9,13 +11,13 @@
     margin-left: 15%;
     background-color: white;
     z-index: 100;
+    
 }
 
 
 
 .nav-align input{
     position: fixed;
-
     top: 2vh;
     width: 450px;
     right: 29vw;
@@ -38,7 +40,26 @@
     
     top: 2vh;
     right: 2rem;
+    cursor: pointer;
+    color: black;
 }
+
+
+
+
+.user-name{
+    position: fixed;
+    right: 4vw;
+    top: 2.9vh;
+    font-family: 'Karla', sans-serif;
+}
+
+@media (max-width: 1350px){
+    .user-name{
+        right: 5vw;
+    }
+}
+
 
 
 
@@ -57,7 +78,19 @@
         position: fixed;
         margin-right: 1%;
     }
+
+    .user-name{
+        right: 7vw;
+    }
 }
+
+@media (max-width: 870px){
+    .user-name{
+        display: none;
+    }
+}
+
+
 
 
 @media (max-width: 700px){
@@ -86,12 +119,15 @@
     .user-icon{
         right: 1rem;
     }
+
 }
 
 @media(max-width:370px){
     .user-icon{
         right: 0rem;
     }
+
+
     .abc{
 
 
