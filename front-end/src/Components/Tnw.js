@@ -3,10 +3,8 @@ import axios from "axios";
 import "./News.css";
 import CircularProgress from '@mui/material/CircularProgress';
 import Backdrop from '@mui/material/Backdrop';
-import share from "../assets/share.png"
-import save from "../assets/save.png"
 import ShareModal from "./ShareModal";
-import { IoMdBookmark,IoMdShare } from "react-icons/io";
+import { IoMdHeart,IoMdShare } from "react-icons/io";
 import { useAuth0 } from "@auth0/auth0-react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -80,10 +78,13 @@ const Tnw = (props) => {
               <ShareModal />
               <img className="img" src={item.enclosure[0].$.url} alt="hi"></img>
               <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
-              <IoMdShare onClick={handleShareButton} className="shareButton" src={share} />
-              <IoMdBookmark onClick={() => toggleSaveButton(index)}  className="saveButton" src={save} 
-                style={{color: color[index] ? "rgb(255,216,0)" : "black"}} />
-              <p className="para">Uploaded on {date}</p>
+              <div className="para">
+              <IoMdHeart onClick={() => toggleSaveButton(index)}  className="saveButton"
+                style={{color: color[index] ? "red" : "black"}} />
+              <IoMdShare onClick={handleShareButton} className="shareButton"  />
+
+              <p >Uploaded on {date}</p>
+              </div>
             </div>
           );
         })

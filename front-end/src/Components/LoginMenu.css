@@ -74,16 +74,17 @@
     color: darkblue;
 }
 
-.action .menu ul li img{
+
+.drop-down-img{
     margin-right: 10px;
-    transition: 0.5s;
+    color: #555;
 }
 
 
 .action .menu ul li a{
     display: inline-block;
     text-decoration: none;
-    color: #555;
+    color: #1d1d1d;
     font-weight: 500;
     transition: 0.5s;
 }

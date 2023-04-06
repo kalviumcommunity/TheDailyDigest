@@ -110,13 +110,13 @@ label #cancel{
     left: 278px;
 }
 
-@media(max-width:1000px){
+@media(max-width:1150px){
     .sidebar{
         left: -341px;
         width: 341px;
     }
 }
-@media(min-width:1000px){
+@media(min-width:1150px){
     label #btn{
         display: none;
     }

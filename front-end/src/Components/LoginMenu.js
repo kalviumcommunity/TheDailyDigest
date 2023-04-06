@@ -4,6 +4,7 @@ import log from "../assets/logout.png"
 import mail from "../assets/mail.png"
 import saved from "../assets/saved.png"
 import "./LoginMenu.css"
+import { IoMdBookmark,IoMdMail,IoMdPower } from "react-icons/io";
 
 
 function LoginMenu() {
@@ -30,9 +31,9 @@ function LoginMenu() {
             {isAuthenticated&&
             <h3>{user.name}</h3>}
             <ul>
-                <li><img src={saved} alt='img'/><a>Saved</a></li>
-                <li><img src={mail} alt='img'/><a  onClick={handleClick}>Feedback</a></li>
-                <li><img src={log} alt='img'/><a onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</a></li>
+                <li><IoMdBookmark className='drop-down-img'/><a>Saved</a></li>
+                <li><IoMdMail className='drop-down-img'/><a  onClick={handleClick}>Feedback</a></li>
+                <li><IoMdPower className='drop-down-img'/><a onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</a></li>
             </ul>
         </div>
     </div>
