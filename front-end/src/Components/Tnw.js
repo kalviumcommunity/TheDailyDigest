@@ -11,9 +11,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Tnw = () => {
+const Tnw = (props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+
+
   const [color, setColor] = useState({});
   const { isAuthenticated } = useAuth0();
 
@@ -51,6 +54,18 @@ const Tnw = () => {
     preLoader();
   }, []);
 
+  useEffect(()=>{
+
+    setSearchQuery(props.searchbar)
+  
+  
+    } ,[props.searchbar])
+  
+  
+    const filteredData = data.filter((item) =>
+      item.title[0].toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
   return (
     <div>
       {loading ? (
@@ -58,7 +73,7 @@ const Tnw = () => {
           <CircularProgress color="inherit" />
         </Backdrop>
       ) : (
-        data.map((item, index) => {
+        filteredData.map((item, index) => {
           const date = item.pubDate[0].slice(0, 22)
           return (
             <div className="news" key={index}>

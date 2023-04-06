@@ -7,9 +7,10 @@ import Backdrop from '@mui/material/Backdrop';
 
 
 
-const Giz = () => {
+const Giz = (props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
 
 
   useEffect(() => {
@@ -22,6 +23,18 @@ const Giz = () => {
     preLoader();
   }, []);
 
+  useEffect(()=>{
+
+    setSearchQuery(props.searchbar)
+  
+  
+    } ,[props.searchbar])
+  
+  
+    const filteredData = data.filter((item) =>
+      item.title[0].toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
   return (  
     <div>
 
@@ -31,7 +44,7 @@ const Giz = () => {
         </Backdrop>
 
       ) : (
-      data.map((item, index) => {
+        filteredData.map((item, index) => {
         const date=item.pubDate[0].slice(0,22)
 
         const images = 'https://res.cloudinary.com/diuq0mz3b/image/upload/v1678421711/istockphoto-1335050734-612x612_x3mdtm.jpg'
