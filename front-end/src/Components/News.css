@@ -50,7 +50,7 @@
     height: 140px;
     border-radius: 8px;
     box-shadow: 0 18px 36px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-    margin-left: 5%;
+    margin-left: 8%;
     align-items: center;
     width: 246px;
 }
@@ -82,12 +82,14 @@
     font-size: 1rem;
     align-self: end;
     z-index: 99;
+    cursor: pointer;
 }
 
 .saveButton{
     font-size: 1rem;
     align-self: end;
     z-index: 99;
+    cursor: pointer;
 
 }
 
