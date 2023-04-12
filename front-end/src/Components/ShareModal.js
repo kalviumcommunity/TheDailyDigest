@@ -22,7 +22,7 @@ function ShareModal() {
   const handleCopyLink = () => {
     copy(linkText);
     setLinkText('Copied!');
-    setTimeout(() => setLinkText(url), 2000);
+    setTimeout(() => setLinkText(url), 500);
   };
 
   const myStyle = {

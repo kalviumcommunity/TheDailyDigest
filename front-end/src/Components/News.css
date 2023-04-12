@@ -93,6 +93,19 @@
 
 }
 
+.noresult{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 10%;
+
+}
+
+.noresult img{
+    height: 300px;
+
+}
+
 
 
 @media (max-width:1200px){
