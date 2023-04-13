@@ -1,20 +1,128 @@
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
+// import "./News.css";
+// import CircularProgress from '@mui/material/CircularProgress';
+// import Backdrop from '@mui/material/Backdrop';
+// import ShareModal from "./ShareModal";
+// import { IoMdHeart,IoMdShare } from "react-icons/io";
+// import { useAuth0 } from "@auth0/auth0-react";
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+
+// const Ars = (props) => {
+//   const [data, setData] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [searchQuery, setSearchQuery] = useState("");
+
+//   const [color, setColor] = useState({});
+//   const { isAuthenticated } = useAuth0();
+
+//   function showModal() {
+//     var modal = document.getElementById("share-modal");
+//     if (modal.style.display === "none") {
+//       modal.style.display = "inline";
+//     }
+//   }
+
+//   function toggleSaveButton(index) {
+//     if (!isAuthenticated) {
+//       toast.error("Log in to continue.", { position: toast.POSITION.TOP_CENTER, autoClose: 2000 });
+//     } else {
+//       setColor({...color, [index]: !color[index]});
+//     }
+//   }
+
+//   function handleShareButton() {
+//     if (!isAuthenticated) {
+//       toast.error("Log in to continue.", { position: toast.POSITION.TOP_CENTER, autoClose: 2000 });
+//     } else {
+//       showModal();
+//     }
+//   }
+
+  
+
+//   useEffect(() => {
+
+//     const preLoader =async()=>{
+//       const response = await axios.get(`${process.env.REACT_APP_RSSFEED}/arstechnica`)
+//       setData(response.data.rss.channel[0].item);
+//       setLoading(false);
+//     };
+//     preLoader();
+//   }, []);
+
+//   useEffect(()=>{
+
+//     setSearchQuery(props.searchbar)
+  
+  
+//     } ,[props.searchbar])
+  
+  
+//     const filteredData = data.filter((item) =>
+//       item.title[0].toLowerCase().includes(searchQuery.toLowerCase())
+//     );
+
+//   return (  
+//     <div>
+
+//             {loading ? (
+//         <Backdrop  className="back-drop-visibility" open={loading}>
+//           <CircularProgress color="inherit" />
+//         </Backdrop>
+
+//       ) : (
+//         filteredData.map((item, index) => {
+//         const date=item.pubDate[0].slice(0,22)
+      
+//         const regex = /<img\s+src="([^"]+)"/;
+//         const imageLink = item.encoded[0];
+//         const matches = imageLink.match(regex);
+//         const src = matches[1];
+//         console.log(src)
+//         return (<div className="news" key={index}>
+//           <ShareModal />
+//           <img className="img" src={src} alt="hi"></img>
+//           <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
+
+//           <div className="para">
+//               <IoMdHeart onClick={() => toggleSaveButton(index)}  className="saveButton"
+//                 style={{color: color[index] ? "red" : "black"}} />
+//               <IoMdShare onClick={handleShareButton} className="shareButton"  />
+
+//               <p >Uploaded on {date}</p>
+//               </div>
+//         </div>
+//         );
+//       })
+//       )}
+//       <ToastContainer />
+//     </div>
+//   );
+// } 
+
+// export default Ars;
+
+
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./News.css";
 import CircularProgress from '@mui/material/CircularProgress';
 import Backdrop from '@mui/material/Backdrop';
 import ShareModal from "./ShareModal";
-import { IoMdHeart,IoMdShare } from "react-icons/io";
+import { IoMdHeart, IoMdShare } from "react-icons/io";
 import { useAuth0 } from "@auth0/auth0-react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import noresult from "../assets/noresult.png"
 
 const Ars = (props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
-
   const [color, setColor] = useState({});
   const { isAuthenticated } = useAuth0();
 
@@ -29,7 +137,7 @@ const Ars = (props) => {
     if (!isAuthenticated) {
       toast.error("Log in to continue.", { position: toast.POSITION.TOP_CENTER, autoClose: 2000 });
     } else {
-      setColor({...color, [index]: !color[index]});
+      setColor({ ...color, [index]: !color[index] });
     }
   }
 
@@ -41,11 +149,8 @@ const Ars = (props) => {
     }
   }
 
-  
-
   useEffect(() => {
-
-    const preLoader =async()=>{
+    const preLoader = async () => {
       const response = await axios.get(`${process.env.REACT_APP_RSSFEED}/arstechnica`)
       setData(response.data.rss.channel[0].item);
       setLoading(false);
@@ -53,54 +158,49 @@ const Ars = (props) => {
     preLoader();
   }, []);
 
-  useEffect(()=>{
-
+  useEffect(() => {
     setSearchQuery(props.searchbar)
-  
-  
-    } ,[props.searchbar])
-  
-  
-    const filteredData = data.filter((item) =>
-      item.title[0].toLowerCase().includes(searchQuery.toLowerCase())
-    );
+  }, [props.searchbar])
 
-  return (  
+  const filteredData = data.filter((item) =>
+    item.title[0].toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
     <div>
-
-            {loading ? (
-        <Backdrop  className="back-drop-visibility" open={loading}>
+      {loading ? (
+        <Backdrop className="back-drop-visibility" open={loading}>
           <CircularProgress color="inherit" />
         </Backdrop>
-
-      ) : (
+      ) : filteredData.length > 0 ? (
         filteredData.map((item, index) => {
-        const date=item.pubDate[0].slice(0,22)
-      
-        const regex = /<img\s+src="([^"]+)"/;
-        const imageLink = item.encoded[0];
-        const matches = imageLink.match(regex);
-        const src = matches[1];
-        console.log(src)
-        return (<div className="news" key={index}>
-          <ShareModal />
-          <img className="img" src={src} alt="hi"></img>
-          <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
-
-          <div className="para">
-              <IoMdHeart onClick={() => toggleSaveButton(index)}  className="saveButton"
-                style={{color: color[index] ? "red" : "black"}} />
-              <IoMdShare onClick={handleShareButton} className="shareButton"  />
-
-              <p >Uploaded on {date}</p>
+          const date = item.pubDate[0].slice(0, 22)
+          const regex = /<img\s+src="([^"]+)"/;
+          const imageLink = item.encoded[0];
+          const matches = imageLink.match(regex);
+          const src = matches[1];
+          return (
+            <div className="news" key={index}>
+              <ShareModal />
+              <img className="img" src={src} alt="hi"></img>
+              <a className="anchor-tag" href={item.link} target="_blank" rel="noreferrer">{item.title[0]}</a>
+              <div className="para">
+                <IoMdHeart onClick={() => toggleSaveButton(index)} className="saveButton" style={{ color: color[index] ? "red" : "black" }} />
+                <IoMdShare onClick={handleShareButton} className="shareButton" />
+                <p>Uploaded on {date}</p>
               </div>
+            </div>
+          );
+        })
+      ) : (
+        <div className="noresult" >
+            <img src={noresult}></img>
         </div>
-        );
-      })
+      
       )}
       <ToastContainer />
     </div>
   );
-} 
+}
 
 export default Ars;

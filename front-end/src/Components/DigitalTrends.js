@@ -8,6 +8,7 @@ import { IoMdHeart,IoMdShare } from "react-icons/io";
 import { useAuth0 } from "@auth0/auth0-react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import noresult from "../assets/noresult.png"
 
 
 const Digi = (props) => {
@@ -73,7 +74,7 @@ const Digi = (props) => {
           <CircularProgress color="inherit" />
         </Backdrop>
 
-      ) : (
+      ) : filteredData.length > 0 ?  (
         filteredData.map((item, index) => {
         const date=item.pubDate[0].slice(0,22)
         return (<div className="news" key={index}>
@@ -91,6 +92,11 @@ const Digi = (props) => {
         </div>
         );
       })
+      ): (
+        <div className="noresult" >
+            <img src={noresult}></img>
+        </div>
+      
       )}
       <ToastContainer />
     </div>
