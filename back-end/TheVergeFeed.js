@@ -15,6 +15,10 @@ const feedUrl = 'https://www.theverge.com/rss/index.xml';
 
 
 const FeedSchema = new mongoose.Schema({
+  userId: {
+    type: String,
+    index:true
+},
   title: String,
   link: String,
   pubDate: Date

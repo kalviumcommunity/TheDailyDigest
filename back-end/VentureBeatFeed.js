@@ -15,6 +15,10 @@ const feedUrl = 'https://venturebeat.com/feed/';
 
 
 const FeedSchema = new mongoose.Schema({
+  userId: {
+    type: String,
+    index:true
+},
   title: String,
   link: String,
   pubDate: Date

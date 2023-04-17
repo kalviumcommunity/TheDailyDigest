@@ -15,6 +15,10 @@ const feedUrl = 'https://feeds.arstechnica.com/arstechnica/technology-lab';
 
 
 const FeedSchema = new mongoose.Schema({
+  userId: {
+    type: String,
+    index:true
+},
   title: String,
   link: String,
   pubDate: Date
@@ -50,6 +54,9 @@ app.get('/arstechnica', (req, res) => {
 
         return res.status(200).send(result);
       });
+
+
+      
     })
     .catch(error => {
       console.error(error);
