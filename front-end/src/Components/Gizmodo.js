@@ -44,8 +44,6 @@ const Giz = (props) => {
     }
   }
 
-  
-
 
   useEffect(() => {
 

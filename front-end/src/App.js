@@ -34,8 +34,6 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
 
-
-
   return (
     <>
       <div className={`${loading ? 'show' : 'hide'}`}>
